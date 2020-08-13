@@ -1,0 +1,22 @@
+
+Val Node infy
+{
+  "validateBelow": [
+    "contentType",
+    "status"
+  ],
+  "id": "val_node_infy",
+  "isRoot": true
+}
+
+
+
+Val Node infy resource
+{
+  "validateBelow": [
+    "mimeType",
+    "resourceType"
+  ],
+  "validateHere": "[{\"property\":\"artifactUrl\",\"operation\":\"notnull\",\"datatype\":\"String\"},{\"property\":\"artifactUrl\",\"operation\":\"hiturl\",\"datatype\":\"String\"},{\"property\":\"artifactUrl\",\"operation\":\"notcontains\",\"datatype\":\"String\",\"value\":\".zip\"},{\"property\":\"children\",\"operation\":\"sizeequalto\",\"datatype\":\"Integer\",\"value\":0},{\"property\":\"duration\",\"operation\":\"greaterthan\",\"datatype\":\"Integer\",\"value\":0},{\"property\":\"resourceCategory\",\"operation\":\"in\",\"datatype\":\"String\",\"value\":[\"Concepts\",\"Facts\",\"Processes\",\"Procedures\",\"Principles\",\"Engage\",\"Prepare\",\"LeaveBehind\",\"TechnicalPlayground\",\"Technical-Playground\",\"Playground\",\"Business-Playground\",\"BusinessPlayground\",\"Assessment-Playground\",\"LeadershipMessage\",\"Techincal-Playground\"]},{\"property\":\"resourceType\",\"operation\":\"in\",\"datatype\":\"String\",\"value\":[\"Article\",\"Lecture\",\"\",\"Quiz\",\"Exercise\",\"Prelude\",\"Tryout\",\"Reference\",\"Assessment\",\"Offering\",\"WebinarRecording\",\"PointOfView\",\"CaseStudy\",\"Lesson\",\"Insights\",\"Course\",\"Brochure\",\"Primer\",\"ElevatorPitch\",\"ResearchStudy\",\"CapstoneProject\",\"ClientDeck\",\"Podcast\",\"Certification\",\"AnalystReport\",\"PointofView\",\"Infographics\",\"HandsOnAssessment\",\"Module\",\"LiveStream\",\"Competitive\",\"CompetitiveInsights\",\"References\",\"Video\"]}]",
+  "id": "val_node_infy_resource"
+}

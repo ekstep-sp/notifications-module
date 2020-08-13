@@ -1,0 +1,51 @@
+CREATE TABLE notification.tbl_tenant_mode
+( 
+root_org character varying NOT NULL, 
+org character varying NOT NULL,
+mode character varying NOT NULL,  
+activated boolean,  
+icon_id character varying, 
+CONSTRAINT tenent_mode_pkey PRIMARY KEY (root_org, org, mode)
+);
+
+
+
+CREATE TABLE notification.tenant_event_template(
+template_id character varying NOT NULL,
+template_subject character varying NOT NULL,
+template_text character varying NOT NUll,
+tag character varying NOT NULL,
+CONSTRAINT tenant_event_template_pKey PRIMARY KEY(template_id) 
+);
+
+
+CREATE TABLE notification.event_group(
+group_id character varying NOT NULL,
+event_id character varying NOT NULL,
+CONSTRAINT event_group_pKey PRIMARY KEY(group_id,event_id)
+);
+
+
+
+
+CREATE TABLE notification.tenant_event_notification
+(
+  root_org character varying NOT NULL,
+  org character varying NOT NULL,
+  event_id character varying NOT NULL,
+  recipient character varying NOT NULL,
+  mode character varying NOT NULL,
+  mode_activated boolean NOT NULL,
+  template_id character varying REFERENCES notification.tenant_event_template(template_id),
+  CONSTRAINT tenent_event_pkey PRIMARY KEY (root_org, org, event_id, recipient, mode)
+);
+
+
+CREATE TABLE notification.tag_address(
+tag character varying NOT NULL,
+db_name character varying NOT NULL,
+table_name character varying NOT NUll,
+field_name character varying NOT NULL,
+primary_key character varying NOT NULL,
+CONSTRAINT tag_address_pKey PRIMARY KEY(tag) 
+);
